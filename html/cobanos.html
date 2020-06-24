@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo On Line</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../fonts/icon/Nueva carpeta/style.css">
+</head>
+<body>
+    
+    <header>
+     <!-- <input type="checkbox" id="menu">-->
+     <label for="menu">
+        <!-- <img src="icono.jpg" alt="auto">-->
+         </label>
+        <div class="margen row header">
+             <img src="../img/BannerHeader3.jpg" alt="">
+             <!--<div class="col-3 col-t-6">
+             </div>-->
+         </div>
+         <div class="MenuMovil">
+            <div class="menu_bar">
+                <a class="bt-menu" href="#"><span class="icon-list"></span>Menu</a>
+            </div>
+            <nav>
+                <div class="contenedor">
+                        <ul> 
+                          <li><a href="indexProyecto.html"><span class="icon-home"></span>INICIO</a></li>
+                          <li><a href="CerroVerde.html"><span class="icon-flag"></span>MONTAÑAS</a></li>                  
+                          <li><a href="cobanos.html"><span class="icon-location1"></span>PLAYAS</a></li>
+                          <li><a href="culturas.html"><span class="icon-star1"></span>CULTURAL</a></li>
+                          <li><a href="cabañas.html"><span class="icon-basket"></span>CABAÑAS</a></li>
+                          <li><a href="material-cards.html"><span class="icon-coffee"></span>TIPICOS</a></li>
+                          <li><a href="video.html"><span class="icon-camera1"></span>VIDEO</a></li>
+                     <!--  <li> <a href="#"> <span></span> GALERIA </a>   </li>-->    
+                </div>
+            </nav>    
+        </div> <br>
+     </header>
+     <div class="container margen row contenido wrapper">
+        <main class="col-tb-12 col-12">
+            <section class="row">
+                <h2 class="h2-fuente"><b>Zona de Playas</b></h2>
+              
+                <article class="col-tb-5 col-6">
+                    <img src="../img/cobanos/Cobanos.jpg" alt="">
+                </article>
+                <article class="col-tb-5 col-6">
+                    <h3>Playa Los cobanos</h3>
+                     <p>
+                        La playa <b>Los Cóbanos</b>, ubicada en el departamento de Sonsonate, es verdaderamente bella, posee unas singulares arenas doradas que resaltan frente a otros destinos turísticos. Entre sus principales actividades acuáticas está el  Buceo, 
+                        este sitio es perfecto ya que guarda tesoros visuales bajo sus cálidas y azules aguas. Siendo recomendada para el turismo El Salvador.
+                     </p>    
+                           <a class="bt boton"href="cobanos2.html"><span class="icon-eye"></span>Que encontras ahí</a>
+                            <a class="bt boton"href="llegarCobanos.html"><span class="icon-location"></span>Comos llegar</a>
+                        <hr>
+                </article>
+              
+            </section>
+            <section class="row">
+                <article class="col-tb-5 col-6">
+                    <h3>Playa Acajutla</h3>
+                    <p>
+                        La ciudad de Acajutla “Lugar de torturas y cañas” está ubicada a 20 kilómetros del sur de Sonsonate y a 85 kilómetros de San Salvador.
+                        En esta playa podrás encontrar  diferentes atractivos turísticos que harán de tu viaje una visita inolvidable.
+                        La ciudad y <b>playa de Acajutla</b>, posee el principal puerto marítimo de El Salvador. Que se convierte en un atractivo turístico, ya que es el principal destino de barcos y cruceros turísticos que llegan al país.
+                        El cual nos regala una hermosa vista de la playa de Acajutla.</p>
+                       
+                        <a class="bt boton"href="acajutla.html"><span class="icon-eye"></span>Que encontras ahí</a>
+                        <a class="bt boton"href="llegarAcajutla.html"><span class="icon-location"></span>Comos llegar</a>
+                <hr>
+                    </article> 
+                    <article class="col-tb-5 col-6">
+                        <img src="../img/cobanos/puerto.jpg" alt="">
+                    </article>
+                
+            </section>
+            <section class="row">
+                <article class="col-tb-5 col-6">
+                    <img src="../img/cobanos/atardecer1.jpg" alt="">
+                </article>
+                <article class="col-tb-5 col-6">
+                    <h4>Metalio</h4>
+                    <p>
+                        Si piensas acudir a <b>playa Metalio</b>, lo primero que te aguarda es un clima fresco, tomar el sol y caminar por las suaves arenas.
+                        Además de tomar el mejor de los bronceados, y hacer un descanso debajo de sus enormes palmeras. Actividades que sin duda te relajará, solo el olor a mar y la suave brisa, serán suficientes para el descanso.
+                        Sin embargo, su amplia explanada te permite realizar algún deporte; hablamos de <b>volley ball o fútbol</b>, esto si te gusta ese tipo de actividad.
+                    </p>
+                    <a class="bt boton"href="metalio.html"><span class="icon-eye"></span>Que encontras ahí</a>
+                    <a class="bt boton"href="llegarMetalio.html"><span class="icon-location"></span>Comos llegar</a>
+                            <hr>
+                </article>
+            </section>
+
+
+        </main>
+    </div>
+     
+      
+           <div class="col-12 col-t-6">
+             <footer>
+                <p>Turismo on line &copy;</p>
+             </footer>
+           </div>
+           <script src="../js/jquery-latest.js"></script>
+           <script>
+               $(document).ready(main);
+     
+               var contador = 1;
+     
+               function main(){
+                   $('.menu_bar').click(function(){
+                       
+                       if(contador == 1){
+                           $('nav').animate({ 
+                               left: '0'
+                           });
+                           contador = 0;
+                       }else {
+                           contador = 1;
+                           $('nav').animate({
+                               left: '-100%'
+                           });
+                       }
+                   });
+               };
+           </script>    
+        
+</body>
+</html>

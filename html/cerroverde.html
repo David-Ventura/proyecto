@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo On Line</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../fonts/icon/Nueva carpeta/style.css">
+</head>
+<body>
+<header>
+    
+ <!-- <input type="checkbox" id="menu">-->
+    <label for="menu">
+    <!-- <img src="icono.jpg" alt="auto">-->
+     </label>
+
+    <div class="margen row header">
+         <img src="../img/BannerHeader4.jpg" alt="">
+         <!--<div class="col-3 col-t-6">
+         </div>-->
+    </div>
+    <div class="MenuMovil">
+        <div class="menu_bar">
+			<a class="bt-menu" href="#"><span class="icon-list"></span>Menu</a>
+		</div>
+        <nav>
+            <div class="contenedor">
+                    <ul> 
+                      <li><a href="indexProyecto.html"><span class="icon-home"></span>INICIO</a></li>
+                      <li><a href="CerroVerde.html"><span class="icon-flag"></span>MONTAÑAS</a></li>                  
+                      <li><a href="cobanos.html"><span class="icon-location1"></span>PLAYAS</a></li>
+                      <li><a href="culturas.html"><span class="icon-star1"></span>CULTURAL</a></li>
+                      <li><a href="cabañas.html"><span class="icon-basket"></span>CABAÑAS</a></li>
+                      <li><a href="material-cards.html"><span class="icon-coffee"></span>TIPICOS</a></li>
+                      <li><a href="video.html"><span class="icon-camera1"></span>VIDEO</a></li>
+                 <!--  <li> <a href="#"> <span></span> GALERIA </a>   </li>-->    
+            </div>
+        </nav>    
+    </div>  <br>
+ </header>
+
+<div class="margen row contenido">
+                <div class="col-1 col-t-6 "></div>
+                <div class="col-5 col-t-6 ">
+                    <h1 align="left">Historia</h1>
+                    <p class="p">Los orígenes del hotel se remontan a 1955, cuando fue construido para ver las erupciones del Volcán de Izalco, pero estas pararon </p>
+                    <p class="p">El hotel, ubicado a una altura de mil 950 metros sobre el nivel del mar y a 30 sobre el cráter del majestuoso volcán de Izalco, fue inaugurado el 19 de noviembre de 1958 y fue cerrado en 1997, año en que la administración declaró pérdidas en sus operaciones, fue diseñado por el arquitecto Francisco Morales bajo la dirección del ingeniero René Suárez, quien puso todo su cariño a esta obra.</p>
+                    <p class="p">La edificación prometía ser una de las más sobresalientes para el turismo internacional. En ella se conjugó armónicamente todo el esplendor del paisaje, la mística de una naturaleza caprichosa y el sentido estético de la arquitectura modernista y atractiva.</p>
+                </div> <br>
+                <div class="col-5 col-t-6 ">
+                    <img src="../img/cerroverde2.jpg" alt="auto" width="" height="">
+                </div>
+                <div class="col-1 col-t-6 "></div>
+            <div class="col-12 col-t-6 ">
+                <h4 class="h2-fuente">En una impresionante aventura con la naturaleza puedes dejarte venir con tu familia amigos a vivir una experiencia en este bonito lugar.</h4> 
+              
+            </div>
+    <div class="col-4 col-t-6">
+            <img src="../img/cerroverde1.jpg"alt="auto" width="" height="">
+            <br>
+        <a class="bt boton" href="#">PARQUE DE VOLCANES CERRO VERDE</a>
+          
+            <!--<figcaption>PARQUE DE VOLCANES CERRO VERDE</figcaption>-->
+    </div>
+        <div class="col-4 col-t-6 ">
+            <img src="../img/casacristal.jpg" alt="auto" width="" height="">
+            <br>
+            <a class="bt boton" href="#">CASA CRISTAL</a>
+        </div>
+        <div class="col-4 col-t-6 ">
+            <img src="../img/iglu2.jpg" alt="auto" width="" height="">
+            <br>
+            <a class="bt boton" href="#">CABAÑAS DE CAMPO BELLO</a>
+        </div> 
+</div>
+<div class="col-12 col-6">
+    <footer>
+        <p>Turismo on line &copy;</p>
+    </footer>
+  </div>
+  <script src="../js/jquery-latest.js"></script>
+  <script>
+      $(document).ready(main);
+
+      var contador = 1;
+
+      function main(){
+          $('.menu_bar').click(function(){
+              
+              if(contador == 1){
+                  $('nav').animate({ 
+                      left: '0'
+                  });
+                  contador = 0;
+              }else {
+                  contador = 1;
+                  $('nav').animate({
+                      left: '-100%'
+                  });
+              }
+          });
+      };
+  </script>
+
+</body>
+</html>

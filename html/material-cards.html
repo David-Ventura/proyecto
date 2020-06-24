@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Turismo On Line</title>
+    
+    <link rel="stylesheet" href="../css/css.css">
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!--    <link rel="stylesheet" href="/css/font-awesome.min.css">-->
+      <link rel="stylesheet" href="../dist/material-cards.css">
+     <link rel="stylesheet" href="../fonts/icon/Nueva carpeta/style.css">
+  <style>
+      /*MENU */
+.header{
+  background-color: rgb(226, 147, 43);
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+}
+/*Menu Para Movil*/
+.menu_bar {
+	display:none;
+}
+.MenuMovil {
+	position:fixed;
+    width:100%;
+	z-index: 100;
+}
+
+.MenuMovil nav {
+	width:100%;
+	margin:5px auto;
+	max-width:1000px;
+	background:#076591;
+}
+
+
+.MenuMovil nav ul {
+	list-style:none;
+    overflow:hidden;
+}
+
+.MenuMovil nav ul li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    float: left;
+
+}
+
+.MenuMovil nav ul li span {
+    margin-right:2px;
+    margin-left: 2px;
+}
+
+.MenuMovil nav ul li a{
+    display:block;
+    width: 100%;
+    margin: 3px;
+	padding:6px;
+	color:#fff;
+	text-decoration:none;
+}
+
+.MenuMovil nav ul li a:hover {
+	background:#037E8C;
+}
+
+/*Menu Para Movil*/
+/*Fin del menu*/
+/*color e hipervincuilo nulo */
+a:link{
+text-decoration: none;
+font-size: 16px;
+text-align:center;
+justify-content: center;
+position: relative;
+}
+
+a.nounderline:link{
+  text-decoration: none;
+ 
+}
+/*menu flotante*/
+header {
+position:fixed;
+width:100%;
+
+z-index: 100;
+
+}
+.contenido{
+padding-top: 220px;
+}
+
+@media (max-width: 768px) {
+    
+  /*menu para moviles*/
+  .MenuMovil nav {
+		width:50%;
+		height:60%;
+		margin:0;
+		position: fixed;
+		left:-100%;
+		/*top:0px;*/
+		overflow:auto;
+	}
+
+	.menu_bar {
+		display:block;
+        width:100%;
+        background:#ccc;
+	}
+
+	.menu_bar .bt-menu {
+		display:block;
+		padding:8px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		background:#076591;
+		overflow: hidden;
+		font-size:25px;
+		font-weight:bold;
+		color:#fff;
+		text-decoration:none;
+	}
+
+	.menu_bar span {
+		float:right;
+		font-size:25px;
+	}
+
+	.MenuMovil nav ul li {
+		display:block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255,.3);
+	}
+    /*menu para moviles*/
+/*menu que no aplica para moviles
+    .menu ul {
+        height: auto;
+        border-bottom: 0px;
+        flex-direction: column;
+    }
+    .menu-li{
+       height:45 px;
+        justify-content: space-between;
+        background: #3b5998;
+        border-bottom: 1px solid #29487d;
+        margin: 1px;
+        
+    }
+    */
+}
+/*menu que no aplica para moviles
+.menu li:hover{
+  
+   cursor: pointer;
+    background-color:rgb(41, 35, 99);
+    color:rgb(29, 205, 228);
+   
+    }
+          
+.menu li>ul{
+/*    position: absolute;*/
+ /*   left: 0px;
+    top:30px;
+    display:block;
+    }
+    .menu li>ul{
+    padding: 10px 0px;
+       display: none;
+
+    }
+*/
+/*.menu li:hover>ul{
+   /* background-color:rgb(226, 147, 43);*/
+ /*   display:block;
+    position:absolute;
+     /* top:30px;
+    left:0px;*/
+/*}
+*/
+   
+/*   top:30px;
+   left:0px;*/
+
+/*menu desplegado en toda la barra*/
+
+.contenedor {
+    width: 80%; /*el ancho de los elementos estructurales debe ser de 1000px*/
+   margin: 0 auto ; /*margen superior e inferior a 0, y el derecho e izquierdo auto, para que se
+    centren en la ventana*/
+    }
+
+    footer{
+    text-align: center;
+    padding: 10px;
+    background-color: #306da7;
+    color:white;
+    font-weight: 800;
+    }
+
+  .row::after{
+    content: "";
+    clear: both;
+    display: table;
+    /*background-color: blue;*/
+}
+h1{
+   text-align: center;
+}
+
+
+/*imagenes*/
+img{
+  width:100%;
+  display: block;
+ /* height: auto;*/
+  margin:auto;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+    <script src="../js/jquery-latest.js"></script>
+    <script>
+        $(document).ready(main);
+
+        var contador = 1;
+
+        function main(){
+            $('.menu_bar').click(function(){
+                
+                if(contador == 1){
+                    $('nav').animate({ 
+                        left: '0'
+                    });
+                    contador = 0;
+                }else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
+        };
+    </script>
+
+<header>
+    <!-- <input type="checkbox" id="menu">-->
+    <label for="menu">
+        <!-- <img src="icono.jpg" alt="auto">-->
+         </label>
+        <div class="margen row header">
+           <!-- <img src="/img/BannerHeader6.jpg" width="90" height="100">-->
+           <img src="../img/BannerHeader7.jpg" alt="">
+             <!--<div class="col-3 col-t-6">
+             </div>-->
+         </div>
+         <div class="MenuMovil">
+            <div class="menu_bar">
+                <a class="bt-menu" href="#"><span class="icon-list"></span>Menu</a>
+            </div>
+            <nav>
+                <div class="contenedor">
+                        <ul> 
+                          <li><a href="indexProyecto.html"><span class="icon-home"></span>INICIO</a></li>
+                          <li><a href="CerroVerde.html"><span class="icon-flag"></span>MONTAÑAS</a></li>                  
+                          <li><a href="cobanos.html"><span class="icon-location1"></span>PLAYAS</a></li>
+                          <li><a href="culturas.html"><span class="icon-star1"></span>CULTURAL</a></li>
+                          <li><a href="cabañas.html"><span class="icon-basket"></span>CABAÑAS</a></li>
+                          <li><a href="material-cards.html"><span class="icon-coffee"></span>TIPICOS</a></li>
+                          <li><a href="video.html"><span class="icon-camera1"></span>VIDEO</a></li>
+                     <!--  <li> <a href="#"> <span></span> GALERIA </a>   </li>-->    
+                </div>
+            </nav>    
+        </div><br>
+</header>
+
+
+
+
+
+<div class="margen contenido">
+<section class="container">
+    <div class="page-header">
+        <h1><b>Degustacion de platos tipicos</b><br></h1>
+    </div>
+    <div class="row active-with-click">
+      
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Red">
+               <h2>
+                    <span>Degustaciones tipicas</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                       En el camino
+                       
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/chilate.jpg">
+                    </div>
+                    <div class="mc-description">
+                       <b> En la ruta de las flores puedes deviarte por el camino al Municipio de Nahuizalco y disfrutar de este plato en una bonita tarde </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                   
+                 <i class="fa fa-bars"></i>
+                </a>
+           
+            </article>
+        </div>
+       
+        
+    <!--</div>-->
+    <!--<div class="row active-with-hover">-->
+        
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Indigo">
+                <h2>
+                    <span>Pupusas</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Para disfrutar en familia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/pupusas.jpg">
+                    </div>
+                    <div class="mc-description">
+                     <b>Pupusas de maíz de arroz con sus diferentes preparaciones</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars "></i>
+                </a>
+             
+            </article>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Light-Blue">
+                <h2>
+                    <span>Quesadiila Tipica</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                    ¡En una tarde!
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/quesadilla.jpg">
+                    </div>
+                    <div class="mc-description">
+                      <b>Quesadilla que puedes de gustar en el camino de la ruta de las flores </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+           
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Cyan">
+                <h2>
+                    <span>Panes con gallina</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Para un tarde en familia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/panescon.jpg">
+                    </div>
+                    <div class="mc-description">
+                       <b>Panes con gallina para disfrutar en familia en un fin de semana</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+              
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Teal">
+                <h2>
+                    <span>Jugos y Licuados</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Degustación
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/jugos.jpg">
+                    </div>
+                    <div class="mc-description">
+                      <b>Licuados de sabores que los encuentras en los lugares que desees visitar </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+               
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Green">
+                <h2>
+                    <span>Papas fritas</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Aperitivo para la tarde
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/papasfritas.jpg">
+                    </div>
+                    <div class="mc-description">
+                      <b>Papas fritas en la celebración de las fiestas patronales y como un plato break de la tarde</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+                
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Light-Green">
+                <h2>
+                    <span>Yuca Salchada</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                   Difruta en familia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/yuca.jpg">
+                    </div>
+                    <div class="mc-description">
+                       <b>La tradicional yuca salcochada que las encuentras en diferentes lugares que sean tu destino</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+               
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Lime">
+                <h2>
+                    <span>Comida en familia</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Comida tipica
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/tamales.jpg">
+                    </div>
+                    <div class="mc-description">
+                       <b>Los tradicionales tamales de gallina que puedes disfrutar en tu ruta de paseo</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+                
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Yellow">
+                <h2>
+                    <span>Tacos</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Disfruta con tu familia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/tacos.jpg">
+                    </div>
+                    <div class="mc-description">
+                        <b>Tacos mixtos de res y de pollo preparados en las degustaciones de tu ruta </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+             
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Amber">
+                <h2>
+                    <span>Pupusas de comal</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Para una cena en cualquier dia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/pupusadecomal.jpg">
+                    </div>
+                    <div class="mc-description">
+                        <b>Las pupusas de comal que las pueden encontrar en el paso en el municipio de Izalco </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+              
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Orange">
+                <h2>
+                    <span>Helados para el calor</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                    }En cualquier momento del dia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/helados .jpg">
+                    </div>
+                    <div class="mc-description">
+                 <b>Los helados como complementos en tu digestión que caen más que bien en cualquier momento de su día</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+               
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Deep-Orange">
+                <h2>
+                    <span>Piña loca</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Aperitivo para la tarde
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/piñapreparada.jpg">
+                    </div>
+                    <div class="mc-description">
+                      <b>La piña loca que la puedes preparar a tu gusto con piquete y con los ingredientes de tu gusto </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+               
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Brown">
+                <h2>
+                    <span>Atol Shuco</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Con pan
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/atolshuco.jpg">
+                    </div>
+                    <div class="mc-description">
+                       <b>El atol shuco para disfrutarlo con pan chile y frijoles acompañado de pan francés un plato típico que puedes disfrutar en familia </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+              
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Grey">
+                <h2>
+                    <span>Compras de noche</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Como de dia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/mercado.jpg">
+                    </div>
+                    <div class="mc-description">
+                        <b>Si quiere vivir la experiencia de comprar en un mercado nocturno el municipio de Nahuizalco es una opción perfecta </b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+               
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Blue-Grey">
+                    <h2>
+                    <span>Degustacion de los derivado del maiz</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        En familia
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="../img/atolde.jpg">
+                    </div>
+                    <div class="mc-description">
+                    <b>Sin faltar en época de cosecha disfrutar de los exquisitos platos de los diferentes derivados del maíz.</b>
+                    </div>
+                </div>
+                <a class="mc-btn-action icon-search">
+                    <i class="fa fa-bars"></i>
+                </a>
+               
+            </article>
+        </div>
+    </div>
+
+</section>
+</div>
+<div class="col-12 col-6">
+    <footer>
+     <p>Turismo on line &copy;</p>
+    </footer>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="../js/jquery.material-cards.min.js"></script>
+<script>
+    $(function() {
+        $('.material-card').materialCard({
+            icon_close: 'fa-chevron-left',
+            icon_open: 'fa-thumbs-o-up',
+            icon_spin: 'fa-spin-fast',
+            card_activator: 'click'
+        });
+
+//        $('.active-with-click .material-card').materialCard();
+
+        window.setTimeout(function() {
+            $('.material-card:eq(1)').materialCard('open');
+        }, 2000);
+
+        $('.material-card').on('shown.material-card show.material-card hide.material-card hidden.material-card', function (event) {
+            console.log(event.type, event.namespace, $(this));
+        });
+
+    });
+</script> 
+
+
+</body>
+</html>
